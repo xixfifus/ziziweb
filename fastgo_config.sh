@@ -45,6 +45,7 @@ cat << EOF > "$config_parts_dir/inbounds.json"
     {
       "tag": "$ss_port_val",
       "port": $ss_port_val,
+      "listen": "0.0.0.0",
       "protocol": "shadowsocks",
       "settings": {
         "method": "aes-128-gcm",

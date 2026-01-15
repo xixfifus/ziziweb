@@ -133,8 +133,8 @@ EOF
 
 echo "拆分的配置文件已生成到 $config_parts_dir"
 
-# 7. 重启 Xray 服务
-echo "正在重启 Xray 服务..."
+# 7. 重启 fastgo 服务
+echo "正在重启 fastgo 服务..."
 
 SUDO_CMD=""
 if command -v sudo &> /dev/null; then
@@ -149,15 +149,15 @@ else
 fi
 
 if [ -n "$SUDO_CMD" ]; then
-    $SUDO_CMD systemctl restart xray
+    $SUDO_CMD systemctl restart fastgo
 else
-    systemctl restart xray
+    systemctl restart fastgo
 fi
 
 if [ $? -eq 0 ]; then
-    echo "Xray 服务已成功重启/尝试重启。"
+    echo "fastgo 服务已成功重启/尝试重启。"
 else
-    echo "警告: 重启 Xray 服务失败。返回码: $?。请检查 Xray 状态、日志以及执行权限。"
+    echo "警告: 重启 fastgo 服务失败。返回码: $?。请检查 fastgo 状态、日志以及执行权限。"
 fi
 
 # 8. 防火墙配置

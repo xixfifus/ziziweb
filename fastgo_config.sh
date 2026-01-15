@@ -57,7 +57,7 @@ cat << EOF > "$config_parts_dir/inbounds.json"
       "tag": "$vless_port_val",
       "port": $vless_port_val,
       "listen": "127.0.0.1",
-      "protocol": "VLESS",
+      "protocol": "vless",
       "settings": {
         "clients": [
           {
